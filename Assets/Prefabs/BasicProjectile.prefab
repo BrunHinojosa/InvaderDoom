@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5242442687094000426}
   - component: {fileID: 6203360269028160335}
   - component: {fileID: 1016837338185462149}
-  - component: {fileID: 1626533313595015261}
   - component: {fileID: 5831047442265402013}
   m_Layer: 0
   m_Name: BasicProjectile
@@ -112,25 +111,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
---- !u!114 &1626533313595015261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186740174822824110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e744a36dc49c1746a064801f3db8962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveAcc: 1
-  jumpAcc: 1
-  maxSpeed: 1
-  rb: {fileID: 0}
-  grounded: 0
 --- !u!135 &5831047442265402013
 SphereCollider:
   m_ObjectHideFlags: 0
