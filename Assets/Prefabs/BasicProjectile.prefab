@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6203360269028160335}
   - component: {fileID: 1016837338185462149}
   - component: {fileID: 5831047442265402013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BasicProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,10 +105,10 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
