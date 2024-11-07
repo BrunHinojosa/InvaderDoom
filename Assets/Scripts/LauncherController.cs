@@ -54,7 +54,7 @@ public class LauncherController : MonoBehaviour
         {
             dragCircle.SetActive(true);
             
-            dragCircle.transform.position = new Vector3(direction.x * mouseDistance, direction.y * mouseDistance, 0f);
+            dragCircle.transform.position = transform.position + new Vector3(direction.x * mouseDistance, direction.y * mouseDistance, 0f);
         }
 
         if (dragging && Input.GetMouseButtonUp(0))
