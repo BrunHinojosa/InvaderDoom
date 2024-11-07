@@ -14,7 +14,7 @@ public class LauncherController : MonoBehaviour
 
     private Queue<GameObject> projectileQueue;
 
-    private float forceMultiplier = 250f;
+    private float forceMultiplier = 275f;
     void Start()
     {
         camera = Camera.main;
