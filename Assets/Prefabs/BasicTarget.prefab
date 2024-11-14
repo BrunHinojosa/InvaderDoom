@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 5242442687094000426}
   - component: {fileID: 6203360269028160335}
   - component: {fileID: 1016837338185462149}
-  - component: {fileID: 5831047442265402013}
-  - component: {fileID: 2534177706148358768}
+  - component: {fileID: 3644614166580027030}
+  - component: {fileID: -3287993109931702977}
+  - component: {fileID: -5731624774404866339}
   m_Layer: 6
-  m_Name: BasicProjectile
+  m_Name: BasicTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.29309148, b: 0, a: 1}
+  m_Color: {r: 0.054277554, g: 0.5471698, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,16 +107,16 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
---- !u!135 &5831047442265402013
-SphereCollider:
+--- !u!136 &3644614166580027030
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,10 +133,12 @@ SphereCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2534177706148358768
+  serializedVersion: 2
+  m_Radius: 0.375
+  m_Height: 1
+  m_Direction: 0
+  m_Center: {x: 0, y: -0.00000055631006, z: 0}
+--- !u!114 &-3287993109931702977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,3 +150,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549e96cde4e85cb4b9ac37eafed9bf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5731624774404866339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186740174822824110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced4eefecf51e874fa442d6ef3c7d1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyRequired: 1.4

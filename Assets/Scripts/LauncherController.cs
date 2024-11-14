@@ -65,6 +65,7 @@ public class LauncherController : MonoBehaviour
             projectileQueue.Peek().gameObject.transform.SetParent(null);
             projectileQueue.Peek().gameObject.GetComponent<Rigidbody>().useGravity = true;
             projectileQueue.Peek().gameObject.GetComponent<Rigidbody>().AddForce(-direction * (mouseDistance * forceMultiplier));
+            projectileQueue.Peek().gameObject.GetComponent<Rigidbody>().excludeLayers = LayerMask.GetMask();
             
             projectileQueue.Dequeue();
         }
