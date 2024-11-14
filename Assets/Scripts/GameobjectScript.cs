@@ -8,12 +8,19 @@ public class GameobjectScript : MonoBehaviour
 
     void Start()
     {
-        myRb = GetComponent<Rigidbody>();
+        if (GetComponent<Rigidbody>() != null)
+            myRb = GetComponent<Rigidbody>();
     }
     
+    //mass in kg, velocity in meters per second, result is joules
     public float RelativeKineticEnergy(Rigidbody rb)
     {
-        //mass in kg, velocity in meters per second, result is joules
-        return 0.5f * myRb.mass * Mathf.Sqrt(Mathf.Pow(myRb.velocity.x - rb.velocity.x, 2) + Mathf.Pow(myRb.velocity.y - rb.velocity.y, 2));
+        if (rb != null && myRb != null)
+            return 0.5f * myRb.mass * Mathf.Sqrt(Mathf.Pow(myRb.velocity.x - rb.velocity.x, 2) + Mathf.Pow(myRb.velocity.y - rb.velocity.y, 2));
+        if (rb == null && myRb != null)
+            return 0.5f * myRb.mass * Mathf.Sqrt(Mathf.Pow(myRb.velocity.x, 2) + Mathf.Pow(myRb.velocity.y, 2));
+        if (rb != null && myRb == null)
+            return 0.5f * myRb.mass * Mathf.Sqrt(Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.y, 2));
+        return 0f;
     }
 }
