@@ -14,7 +14,7 @@ public class LauncherController : MonoBehaviour
 
     private Queue<GameObject> projectileQueue;
 
-    private float forceMultiplier = 5f;
+    private float forceMultiplier = 6f;
 
     public GameObject testObject;
 
@@ -93,6 +93,7 @@ public class LauncherController : MonoBehaviour
             projectileQueue.Peek().gameObject.GetComponent<Rigidbody>().useGravity = true;
             projectileQueue.Peek().gameObject.GetComponent<Rigidbody>().AddForce(-direction * (mouseDistance * forceMultiplier), ForceMode.Impulse);
             projectileQueue.Peek().gameObject.GetComponent<Rigidbody>().excludeLayers = LayerMask.GetMask();
+            projectileQueue.Peek().gameObject.GetComponent<ProjectileScript>().startTimer = true;
             
             projectileQueue.Dequeue();
         }

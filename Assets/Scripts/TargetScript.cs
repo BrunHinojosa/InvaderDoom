@@ -6,19 +6,28 @@ using UnityEngine;
 public class TargetScript : MonoBehaviour
 {
     private Rigidbody myRb;
-    public float energyRequired = 0.1f;
+    public float forceRequired = 1f;
+    
+    private LevelManager levelManager;
+    
+    public float scoreAdd = 1f;
 
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
+        
+        levelManager = FindObjectOfType<LevelManager>().GetComponent<LevelManager>();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<GameobjectScript>() != null)
+        Vector3 collisionForce = other.impulse / Time.fixedDeltaTime;
+        
+        if (collisionForce.magnitude >= forceRequired)
         {
-            if (other.gameObject.GetComponent<GameobjectScript>().RelativeKineticEnergy(myRb) >= energyRequired)
-                Destroy(this.gameObject);
+            levelManager.score += scoreAdd;
+                
+            Destroy(this.gameObject);
         }
     }
 }

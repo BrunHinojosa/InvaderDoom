@@ -5,23 +5,30 @@ using UnityEngine;
 public class BreakableScript : MonoBehaviour
 {
     private Rigidbody myRb;
-    public float energyRequired = 2f;
+    public float forceRequired = 2f;
+
+    private LevelManager levelManager;
+
+    public float scoreAdd = 1f;
 
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
+        
+        levelManager = FindObjectOfType<LevelManager>().GetComponent<LevelManager>();
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.GetComponent<GameobjectScript>() != null)
-        {
-            energyRequired -= other.gameObject.GetComponent<GameobjectScript>().RelativeKineticEnergy(myRb);
+        Vector3 collisionForce = other.impulse / Time.fixedDeltaTime;
+        
+        forceRequired -= collisionForce.magnitude;
             
-            if (energyRequired <= 0)
-            {
-                Destroy(this.gameObject);
-            }
+        if (forceRequired <= 0)
+        {
+            levelManager.score += scoreAdd;
+                
+            Destroy(this.gameObject);
         }
     }
 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3214432009437997095}
   - component: {fileID: 6939640774818958571}
   - component: {fileID: 1390516650312425233}
-  - component: {fileID: 5540512547701410426}
   - component: {fileID: 7278512942101497519}
   m_Layer: 8
   m_Name: Tier2Breakable
@@ -96,7 +95,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4679148982282957535}
   serializedVersion: 4
-  m_Mass: 3
+  m_Mass: 6
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -136,18 +135,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5540512547701410426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4679148982282957535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549e96cde4e85cb4b9ac37eafed9bf21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7278512942101497519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,4 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7712c6df33409b9438fb89faf3c1e0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyRequired: 2
+  forceRequired: 1300
+  scoreAdd: 20

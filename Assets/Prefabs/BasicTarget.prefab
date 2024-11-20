@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6203360269028160335}
   - component: {fileID: 1016837338185462149}
   - component: {fileID: 3644614166580027030}
-  - component: {fileID: -3287993109931702977}
   - component: {fileID: -5731624774404866339}
   m_Layer: 6
   m_Name: BasicTarget
@@ -138,18 +137,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 0
   m_Center: {x: 0, y: -0.00000055631006, z: 0}
---- !u!114 &-3287993109931702977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186740174822824110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 549e96cde4e85cb4b9ac37eafed9bf21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-5731624774404866339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,4 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced4eefecf51e874fa442d6ef3c7d1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyRequired: 0.8
+  forceRequired: 100
+  scoreAdd: 100
