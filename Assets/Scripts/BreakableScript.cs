@@ -9,8 +9,6 @@ public class BreakableScript : MonoBehaviour
 
     private LevelManager levelManager;
 
-    public float scoreAdd = 1f;
-
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
@@ -26,7 +24,7 @@ public class BreakableScript : MonoBehaviour
             
         if (forceRequired <= 0)
         {
-            levelManager.score += scoreAdd;
+            levelManager.score += GetComponent<ScoreScript>().scoreAdd;
                 
             Destroy(this.gameObject);
         }

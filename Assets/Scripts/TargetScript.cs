@@ -9,8 +9,6 @@ public class TargetScript : MonoBehaviour
     public float forceRequired = 1f;
     
     private LevelManager levelManager;
-    
-    public float scoreAdd = 1f;
 
     void Start()
     {
@@ -25,7 +23,8 @@ public class TargetScript : MonoBehaviour
         
         if (collisionForce.magnitude >= forceRequired)
         {
-            levelManager.score += scoreAdd;
+            levelManager.score += GetComponent<ScoreScript>().scoreAdd;
+            levelManager.targetsLeft--;
                 
             Destroy(this.gameObject);
         }

@@ -12,7 +12,7 @@ public class LauncherController : MonoBehaviour
 
     public GameObject[] projectiles;
 
-    private Queue<GameObject> projectileQueue;
+    public Queue<GameObject> projectileQueue;
 
     private float forceMultiplier = 6f;
 
