@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6939640774818958571}
   - component: {fileID: 1390516650312425233}
   - component: {fileID: 7278512942101497519}
+  - component: {fileID: 5916420441086814286}
   m_Layer: 8
   m_Name: Tier3Breakable
   m_TagString: Untagged
@@ -148,4 +149,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceRequired: 1500
-  scoreAdd: 30
+--- !u!114 &5916420441086814286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4679148982282957535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2a4fda04c5bdc4a95fca4d6f924a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreAdd: 100
