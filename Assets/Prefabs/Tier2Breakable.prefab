@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &3114468115779885895
 Transform:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9384004, g: 1, b: 0, a: 1}
   m_FlipX: 0
@@ -97,7 +97,7 @@ Rigidbody:
   m_GameObject: {fileID: 4679148982282957535}
   serializedVersion: 4
   m_Mass: 6
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -122,7 +122,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4679148982282957535}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ff2255d6ae455c248b6907ca607e05df, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7712c6df33409b9438fb89faf3c1e0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceRequired: 1200
+  forceRequired: 800
 --- !u!114 &4464725809579310957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2a4fda04c5bdc4a95fca4d6f924a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreAdd: 50
+  scoreAdd: 1000

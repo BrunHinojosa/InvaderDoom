@@ -14,7 +14,7 @@ public class LauncherController : MonoBehaviour
 
     public Queue<GameObject> projectileQueue;
 
-    private float forceMultiplier = 6f;
+    private float forceMultiplier = 8f;
 
     public GameObject testObject;
 

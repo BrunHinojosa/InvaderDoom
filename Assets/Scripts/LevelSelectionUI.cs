@@ -10,6 +10,11 @@ public class LevelSelectionUI : MonoBehaviour
         //tells unit to load the main game scenes.
         SceneManager.LoadScene("SampleLevel");
     }
+    
+    public void LoadLvl1_1()
+    {
+        SceneManager.LoadScene("1-1");
+    }
 
     public void ReturnToMenu()
     {

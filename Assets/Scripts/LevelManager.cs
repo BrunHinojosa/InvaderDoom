@@ -31,6 +31,10 @@ public class LevelManager : MonoBehaviour
 
     private GameObject resetBtn;
     
+    private static float THREE_STAR_PERCENT = 0.8f;
+    private static float TWO_STAR_PERCENT = 0.6f;
+    private static float ONE_STAR_PERCENT = 0.4f;
+    
 
     void Start()
     {
@@ -72,18 +76,18 @@ public class LevelManager : MonoBehaviour
                 lc.projectileQueue.Dequeue();
             }
             
-            if (score >= 0.7f * maxLevelScore)
+            if (score >= THREE_STAR_PERCENT * maxLevelScore)
             {
                 star1.GetComponent<Image>().sprite = yellowStar;
                 star2.GetComponent<Image>().sprite = yellowStar;
                 star3.GetComponent<Image>().sprite = yellowStar;
             }
-            else if (score >= 0.5f * maxLevelScore)
+            else if (score >= TWO_STAR_PERCENT * maxLevelScore)
             {
                 star1.GetComponent<Image>().sprite = yellowStar;
                 star2.GetComponent<Image>().sprite = yellowStar;
             }
-            else if (score >= 0.2f * maxLevelScore)
+            else if (score >= ONE_STAR_PERCENT * maxLevelScore)
             {
                 star1.GetComponent<Image>().sprite = yellowStar;
             }
