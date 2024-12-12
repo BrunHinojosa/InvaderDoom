@@ -8,6 +8,13 @@ public class ProjectileScript : MonoBehaviour
 
     public bool startTimer;
     
+    public Vector3 startPos;
+
+    void Start()
+    {
+        startPos = transform.position;
+    }
+    
     void Update()
     {
         if (startTimer)

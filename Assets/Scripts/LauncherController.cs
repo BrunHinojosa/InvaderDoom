@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LauncherController : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class LauncherController : MonoBehaviour
     private float dotAmount = 50f;
     private List<GameObject> dots;
     List<Vector3> nodes = new List<Vector3>();
+
+    private GameObject endScreen;
+    private LevelManager levelManager;
     
     void Start()
     {
@@ -33,7 +37,10 @@ public class LauncherController : MonoBehaviour
             dots.Add(Instantiate(testObject, new Vector3(0f, 0f, 0f), Quaternion.identity));
             dots[i].SetActive(false);
         }
-
+        
+        endScreen = GameObject.Find("EndLevelUI");
+        
+        levelManager = FindObjectOfType<LevelManager>().GetComponent<LevelManager>();
     }
     
     void Update()
@@ -80,8 +87,8 @@ public class LauncherController : MonoBehaviour
                 dots[i].transform.position = nodes[i];
             }
         }
-
-        if (dragging && Input.GetMouseButtonUp(0))
+        
+        if (!endScreen.GetComponent<Image>().enabled && dragging && Input.GetMouseButtonUp(0))
         {
             for (int i = 0; i < dots.Count; i += 2)
                 dots[i].SetActive(false);
@@ -97,6 +104,19 @@ public class LauncherController : MonoBehaviour
             
             projectileQueue.Dequeue();
         }
+        
+        if (levelManager.endTimer <= 0.0f)
+        {
+            for (int i = 0; i < dots.Count; i += 2)
+                dots[i].SetActive(false);
+
+            if (projectileQueue.Count > 0)
+                projectileQueue.Peek().gameObject.transform.SetParent(null);
+            
+            dragCircle.SetActive(false);
+            dragging = false;
+        }
+
     }
     
     void GenerateSamples(Vector3 origin, Vector2 direction, float strength, float samples, float deltaT)

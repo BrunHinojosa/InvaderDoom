@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
 
     public int targetsLeft;
 
-    private float endTimer = 5f;
+    public float endTimer = 5f;
     private bool timerFinished = false;
 
     private GameObject endScreen;
@@ -34,8 +34,9 @@ public class LevelManager : MonoBehaviour
     private static float THREE_STAR_PERCENT = 0.8f;
     private static float TWO_STAR_PERCENT = 0.6f;
     private static float ONE_STAR_PERCENT = 0.4f;
-    
 
+    private GameObject lvlSelectBtn;
+    
     void Start()
     {
         scoreText = GameObject.FindWithTag("Score").GetComponent<TextMeshProUGUI>();
@@ -55,6 +56,8 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < allScores.Length; i++)
             maxLevelScore += allScores[i].scoreAdd;
+        
+        lvlSelectBtn = GameObject.Find("LvlSelectBtn");
     }
 
     void Update()
@@ -66,12 +69,15 @@ public class LevelManager : MonoBehaviour
             endTimer -= Time.deltaTime;
         }
 
-        if (!timerFinished && endTimer <= 0)
+        if (!timerFinished && endTimer <= -0.2f)
         {
             timerFinished = true;
 
             while (lc.projectileQueue.Count > 0)
             {
+                lc.projectileQueue.Peek().GetComponent<ProjectileScript>().transform.position =
+                    lc.projectileQueue.Peek().GetComponent<ProjectileScript>().startPos;
+                
                 score += lc.projectileQueue.Peek().GetComponent<ScoreScript>().scoreAdd;
                 lc.projectileQueue.Dequeue();
             }
@@ -101,12 +107,20 @@ public class LevelManager : MonoBehaviour
             star3.GetComponent<Image>().enabled = true;
             
             scoreText.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -10);
-            resetBtn.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, -70);
+            resetBtn.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(100, -70);
+            lvlSelectBtn.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(-100, -70);
+            lvlSelectBtn.gameObject.GetComponent<Image>().enabled = true;
+            lvlSelectBtn.gameObject.GetComponent<Button>().enabled = true;
         }
     }
     
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public void LvlSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
     }
 }
